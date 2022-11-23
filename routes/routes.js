@@ -1,5 +1,5 @@
 import express  from "express";
-import { getCards, createCards } from "../models";
+import { getCards, createCards } from "../models/index.js";
 
 const cardRouter = express.Router();
 
