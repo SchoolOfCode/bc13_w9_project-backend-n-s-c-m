@@ -15,6 +15,7 @@ cardRouter.get("/", async (req, res)=> {
 
 cardRouter.post("/", async (req, res)=> {
     const newCard = req.body
+    console.log(newCard)
     const result = await createCards(newCard)
     res.status(201).json({ success: true, payload: result })
 })
