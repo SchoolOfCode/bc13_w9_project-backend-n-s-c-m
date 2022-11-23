@@ -9,10 +9,11 @@ const cardRouter = express.Router();
 //set up get function that handles the get request
 //set up a POST function that handles post request
 
-cardRouter.get("/", async (req, res) => {
-	const cards = await getCards();
-	res.status(200).json({ success: true, payload: cards });
-});
+
+cardRouter.get("/", async (req, res)=> {
+    const cards = await getCards()
+    res.status(200).json({ success: true, payload: cards })
+})
 
 cardRouter.post("/", async (req, res) => {
 	const newCard = req.body;

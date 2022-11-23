@@ -6,6 +6,6 @@ export async function getCards (){
 }
 
 export async function createCards (newCard) {
-    const data = await pool.query ("INSERT INTO cards (week,day,image,topic,ref) VALUES ($1,$2,$3,ARRAY[$4],ARRAY[$5]) RETURNING *", [newCard.week, newCard.day,newCard.image,newCard.topic,newCard.references])
+    const data = await pool.query ("INSERT INTO cards (week,day,image,topic,ref) VALUES ($1,$2,$3,$4,$5) RETURNING *", [newCard.week, newCard.day,newCard.image,newCard.topic,newCard.ref])
     return data.rows[0];
 }
