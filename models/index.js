@@ -1,7 +1,7 @@
 import {pool} from "../db/db.js"
 
 export async function getCards (){
-    const data = await pool.query ("SELECT * FROM cards")
+    const data = await pool.query ("SELECT * FROM cards ORDER BY week, CASE WHEN day = 'Sunday' THEN 7 WHEN day = 'Monday' THEN 1 WHEN day = 'Tuesday' THEN 2 WHEN day = 'Wednesday' THEN 3 WHEN day = 'Thursday' THEN 4 WHEN day = 'Friday' THEN 5 WHEN day = 'Saturday' THEN 6 END ASC;")
     return data.rows
 }
 
