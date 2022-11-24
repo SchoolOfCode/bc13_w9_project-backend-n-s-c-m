@@ -17,3 +17,10 @@ describe('Submits new card', () => {
     cy.get('.cardDisplay').contains('Week 52')
   })
 })
+describe('should contain image ', () => {
+  it('Posts image in the card', () => {
+    cy.visit('http://localhost:3000/')
+    cy.get(':nth-child(2) > .image').should('be.visible')   
+  })
+})
+
