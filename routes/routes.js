@@ -1,13 +1,7 @@
 import express from "express";
 import { getCards, createCards, deleteCard } from "../models/index.js";
-import cors from "cors";
 
 const cardRouter = express.Router();
-
-//PLAN:
-//import function from models (charles)
-//set up get function that handles the get request
-//set up a POST function that handles post request
 
 cardRouter.get("/", async (req, res) => {
 	const cards = await getCards();

@@ -6,7 +6,7 @@ describe('Checking out page', () => {
 describe('Checks for existing card', () => {
   it('Looks for prre-existing card from db', () => {
     cy.visit('http://localhost:3000/')
-    cy.get('.cardDisplay').contains('www.arrays.com')
+    cy.get('.cardDisplay').contains('www.google.com')
   })
 })
 describe('Submits new card', () => {
@@ -15,6 +15,10 @@ describe('Submits new card', () => {
     cy.get('.weekInput').type('52')
     cy.get('.button').click()
     cy.get('.cardDisplay').contains('Week 52')
+  })
+  it('Deletes card', () => {
+    cy.visit('http://localhost:3000/')
+    cy.contains('Week 52').parent().parent().find('button').click()
   })
 })
 describe('should contain image ', () => {
