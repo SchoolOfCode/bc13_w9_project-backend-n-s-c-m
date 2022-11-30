@@ -24,6 +24,6 @@ async function resetCardsTable() {
 	const insert = await insertCardsTable();
 	return [drop, create, insert];
 }
-resetCardsTable();
+
 
 export { createCardsTable, dropCardsTable, resetCardsTable };
